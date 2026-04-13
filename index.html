@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shweta U. Narkar, Ph.D.</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #1a1a1a;
+      background: #fff;
+    }
+
+    a { color: #185FA5; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container { max-width: 780px; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* HERO */
+    .hero { padding: 3rem 0 2.25rem; border-bottom: 1px solid #e8e8e8; }
+    .hero-inner { display: flex; gap: 2rem; align-items: flex-start; flex-wrap: wrap; }
+
+    .photo-wrap {
+      flex-shrink: 0;
+      width: 150px; height: 150px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 1px solid #e0e0e0;
+      background: #f5f5f5;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .photo-wrap img { width: 100%; height: 100%; object-fit: cover; }
+    .photo-initials { font-size: 40px; font-weight: 500; color: #aaa; }
+
+    .bio-block { flex: 1; min-width: 240px; }
+    .name { font-size: 24px; font-weight: 600; letter-spacing: -0.3px; }
+
+    .affil-row { display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
+    .affil-badge {
+      font-size: 11px; padding: 3px 10px;
+      border-radius: 99px; border: 1px solid;
+    }
+    .affil-badge.rpi { background: #fdf0f0; color: #a32d2d; border-color: #f09595; }
+    .affil-badge.rare { background: #e6f1fb; color: #185fa5; border-color: #85b7eb; }
+
+    .bio-text { font-size: 14px; line-height: 1.75; color: #222; margin-top: 14px; }
+
+    .contact-row { display: flex; gap: 18px; margin-top: 10px; flex-wrap: wrap; }
+    .contact-item { font-size: 13px; color: #555; }
+    .contact-label { font-size: 11px; color: #999; margin-right: 3px; }
+
+    .link-row { display: flex; gap: 7px; margin-top: 12px; flex-wrap: wrap; }
+    .lbtn {
+      font-size: 12px; padding: 5px 12px;
+      border: 1px solid #ccc; border-radius: 6px;
+      color: #555; background: #fff;
+      text-decoration: none; cursor: pointer;
+      display: inline-block;
+    }
+    .lbtn:hover { background: #f5f5f5; text-decoration: none; }
+    .lbtn.primary { background: #185FA5; color: #fff; border-color: #185FA5; }
+    .lbtn.primary:hover { background: #0c447c; }
+
+    /* SECTIONS */
+    .section { padding: 2rem 0; border-bottom: 1px solid #e8e8e8; }
+    .section:last-child { border-bottom: none; }
+    .sec-label {
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 0.09em; text-transform: uppercase;
+      color: #999; margin-bottom: 1.2rem;
+    }
+
+    /* RESEARCH CARDS */
+    .research-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 12px;
+    }
+    .rcard { background: #f8f8f8; border-radius: 8px; padding: 1rem; }
+    .rcard-title { font-size: 13px; font-weight: 600; margin-bottom: 5px; }
+    .rcard-desc { font-size: 12px; color: #555; line-height: 1.6; }
+    .tags { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 4px; }
+    .tag {
+      font-size: 11px; padding: 2px 8px;
+      border-radius: 99px; background: #eeedfe; color: #3c3489;
+    }
+
+    /* PUBLICATIONS */
+    .pub-item { margin-bottom: 1.1rem; padding-bottom: 1.1rem; border-bottom: 1px solid #f0f0f0; }
+    .pub-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .pub-title { font-size: 13px; font-weight: 600; line-height: 1.5; }
+    .pub-meta { font-size: 12px; color: #666; margin-top: 3px; }
+    .pub-badge {
+      font-size: 11px; padding: 2px 8px;
+      border-radius: 99px; margin-left: 6px;
+      font-weight: 500;
+    }
+    .pub-badge.published { background: #eaf3de; color: #27500a; }
+    .pub-badge.prep { background: #faeeda; color: #633806; }
+
+    /* EXPERIENCE */
+    .exp-item { margin-bottom: 1.2rem; }
+    .exp-item:last-child { margin-bottom: 0; }
+    .exp-row { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+    .exp-role { font-size: 14px; font-weight: 600; }
+    .exp-date { font-size: 12px; color: #999; white-space: nowrap; }
+    .exp-org { font-size: 13px; color: #555; margin-top: 2px; }
+    .exp-desc { font-size: 12px; color: #666; margin-top: 3px; line-height: 1.6; }
+
+    /* SKILLS */
+    .slabel { font-size: 12px; color: #999; margin-bottom: 7px; }
+    .skills-row { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 14px; }
+    .stag { font-size: 12px; padding: 4px 11px; border-radius: 6px; }
+    .stag.strong { background: #e1f5ee; color: #085041; }
+    .stag.light { background: #f5f5f5; color: #555; border: 1px solid #e0e0e0; }
+
+    /* FOOTER */
+    .footer {
+      padding: 1.5rem 0;
+      text-align: center;
+      font-size: 12px;
+      color: #aaa;
+      border-top: 1px solid #e8e8e8;
+    }
+
+    @media (max-width: 520px) {
+      .hero-inner { flex-direction: column; align-items: center; text-align: center; }
+      .affil-row, .contact-row, .link-row { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="photo-wrap">
+        <img src="photo.jpg" alt="Shweta U. Narkar" onerror="this.style.display='none'; this.parentNode.innerHTML='<span class=\'photo-initials\'>SN</span>';" />
+      </div>
+      <div class="bio-block">
+        <div class="name">Shweta U. Narkar, Ph.D.</div>
+        <div class="affil-row">
+          <span class="affil-badge rpi">Rensselaer Polytechnic Institute</span>
+          <span class="affil-badge rare">RARE Center</span>
+        </div>
+        <p class="bio-text">I work at the intersection of AI and science — building systems that can represent, reason over, and explain complex scientific knowledge. My research combines knowledge graphs, ontologies, and machine learning to make experimental data in prebiotic chemistry interpretable and reusable.</p>
+        <div class="contact-row">
+          <span class="contact-item"><span class="contact-label">RPI</span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5937382b32382a6b192b2930773c3d2c">[email&#160;protected]</a></span>
+          <span class="contact-item"><span class="contact-label">personal</span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6d1e051a08190c435e5b54582d0a000c0401430e0200">[email&#160;protected]</a></span>
+        </div>
+        <div class="link-row">
+          <a class="lbtn primary" href="https://scholar.google.com/citations?user=o9xsX8EAAAAJ&hl=en" target="_blank">Google Scholar</a>
+          <a class="lbtn" href="https://github.com/shweta3695" target="_blank">GitHub</a>
+          <a class="lbtn" href="https://www.linkedin.com/in/shwetanarkar/" target="_blank">LinkedIn</a>
+          <a class="lbtn" href="cv-academic.pdf" target="_blank">Academic CV</a>
+          <a class="lbtn" href="cv-industry.pdf" target="_blank">Industry CV</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- RESEARCH -->
+<div class="section">
+  <div class="container">
+    <div class="sec-label">Research</div>
+    <div class="research-grid">
+      <div class="rcard">
+        <div class="rcard-title">POLO Ontology</div>
+        <div class="rcard-desc">Prebiotic Origins of Life Ontology — knowledge representation for experimental prebiotic chemistry. Enables FAIR data, semantic reasoning, and reproducibility over 200+ experiments.</div>
+        <div class="tags"><span class="tag">Ontology</span><span class="tag">OWL/RDF</span><span class="tag">SPARQL</span></div>
+      </div>
+      <div class="rcard">
+        <div class="rcard-title">Explainable Scientific ML</div>
+        <div class="rcard-desc">Applying SHAP and interpretability methods to geochemistry datasets — making model predictions transparent and actionable for domain scientists.</div>
+        <div class="tags"><span class="tag">XAI</span><span class="tag">SHAP</span><span class="tag">Scientific ML</span></div>
+      </div>
+      <div class="rcard">
+        <div class="rcard-title">Knowledge Graphs</div>
+        <div class="rcard-desc">Designing and deploying OWL/RDF/SPARQL knowledge graphs for scientific data — enabling structured querying, provenance tracking, and interoperability.</div>
+        <div class="tags"><span class="tag">Knowledge Graphs</span><span class="tag">Data Provenance</span><span class="tag">FAIR</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PUBLICATIONS -->
+<div class="section">
+  <div class="container">
+    <div class="sec-label">Publications</div>
+
+    <div class="pub-item">
+      <div class="pub-title">
+        Model LineUpper: Supporting Interactive Model Comparison at Multiple Levels for AutoML
+        <span class="pub-badge published">IUI 2021</span>
+      </div>
+      <div class="pub-meta">
+        <strong>Narkar S.U.</strong>, Zhang Y., Liao Q.V., Wang D., Weisz J.D. &nbsp;·&nbsp; ACM IUI 2021 &nbsp;·&nbsp;
+        <a href="https://arxiv.org/abs/2104.04375" target="_blank">arXiv</a>
+      </div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-title">
+        POLO: A Prebiotic Origins of Life Ontology for experimental chemistry
+        <span class="pub-badge prep">in prep</span>
+      </div>
+      <div class="pub-meta"><strong>Narkar S.U.</strong>, Riggi V.S., Hendler J.A., Rogers K.L. &nbsp;·&nbsp; Targeting ISWC</div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-title">
+        A data framework for reproducible prebiotic chemistry experiments
+        <span class="pub-badge prep">in prep</span>
+      </div>
+      <div class="pub-meta">In preparation</div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-title">
+        Analysis paper
+        <span class="pub-badge prep">in prep</span>
+      </div>
+      <div class="pub-meta">In preparation</div>
+    </div>
+  </div>
+</div>
+
+<!-- EDUCATION & EXPERIENCE -->
+<div class="section">
+  <div class="container">
+    <div class="sec-label">Education &amp; Experience</div>
+
+    <div class="exp-item">
+      <div class="exp-row">
+        <span class="exp-role">Postdoctoral Research Associate</span>
+        <span class="exp-date">2025 – present</span>
+      </div>
+      <div class="exp-org">Rensselaer Polytechnic Institute &nbsp;·&nbsp; Advisors: Dr. James A. Hendler &amp; Dr. Karyn L. Rogers</div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-row">
+        <span class="exp-role">Ph.D., Multidisciplinary Science</span>
+        <span class="exp-date">2025</span>
+      </div>
+      <div class="exp-org">Rensselaer Polytechnic Institute, Troy, NY</div>
+      <div class="exp-desc">Dissertation: Enriching experimental prebiotic chemistry through semantics and computational technologies.</div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-row">
+        <span class="exp-role">M.S., Data Science and Analytics</span>
+        <span class="exp-date">Prior</span>
+      </div>
+      <div class="exp-org">Rensselaer Polytechnic Institute, Troy, NY</div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-row">
+        <span class="exp-role">B.E., Computer Engineering</span>
+        <span class="exp-date">Prior</span>
+      </div>
+      <div class="exp-org">Cummins College of Engineering, University of Pune, India</div>
+    </div>
+  </div>
+</div>
+
+<!-- SKILLS -->
+<div class="section">
+  <div class="container">
+    <div class="sec-label">Skills</div>
+    <div class="slabel">Core strengths</div>
+    <div class="skills-row">
+      <span class="stag strong">Explainable AI</span>
+      <span class="stag strong">Knowledge Graphs</span>
+      <span class="stag strong">Scientific ML</span>
+      <span class="stag strong">Ontology Engineering</span>
+      <span class="stag strong">OWL · RDF · SPARQL</span>
+    </div>
+    <div class="slabel">Additional</div>
+    <div class="skills-row">
+      <span class="stag light">Generative AI</span>
+      <span class="stag light">LLMs</span>
+      <span class="stag light">Python</span>
+      <span class="stag light">SHAP</span>
+      <span class="stag light">FAIR Data</span>
+      <span class="stag light">Data Provenance</s
