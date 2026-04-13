@@ -20,17 +20,13 @@
 
     .container { max-width: 780px; margin: 0 auto; padding: 0 1.5rem; }
 
-    /* HERO */
     .hero { padding: 3rem 0 2.25rem; border-bottom: 1px solid #e8e8e8; }
     .hero-inner { display: flex; gap: 2rem; align-items: flex-start; flex-wrap: wrap; }
 
     .photo-wrap {
-      flex-shrink: 0;
-      width: 150px; height: 150px;
-      border-radius: 50%;
-      overflow: hidden;
-      border: 1px solid #e0e0e0;
-      background: #f5f5f5;
+      flex-shrink: 0; width: 150px; height: 150px;
+      border-radius: 50%; overflow: hidden;
+      border: 1px solid #e0e0e0; background: #f5f5f5;
       display: flex; align-items: center; justify-content: center;
     }
     .photo-wrap img { width: 100%; height: 100%; object-fit: cover; }
@@ -42,8 +38,9 @@
     .affil-row { display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
     .affil-badge {
       font-size: 11px; padding: 3px 10px;
-      border-radius: 99px; border: 1px solid;
+      border-radius: 99px; border: 1px solid; text-decoration: none;
     }
+    .affil-badge:hover { opacity: 0.8; text-decoration: none; }
     .affil-badge.rpi { background: #fdf0f0; color: #a32d2d; border-color: #f09595; }
     .affil-badge.rare { background: #e6f1fb; color: #185fa5; border-color: #85b7eb; }
 
@@ -58,14 +55,12 @@
       font-size: 12px; padding: 5px 12px;
       border: 1px solid #ccc; border-radius: 6px;
       color: #555; background: #fff;
-      text-decoration: none; cursor: pointer;
-      display: inline-block;
+      text-decoration: none; display: inline-block;
     }
     .lbtn:hover { background: #f5f5f5; text-decoration: none; }
     .lbtn.primary { background: #185FA5; color: #fff; border-color: #185FA5; }
     .lbtn.primary:hover { background: #0c447c; }
 
-    /* SECTIONS */
     .section { padding: 2rem 0; border-bottom: 1px solid #e8e8e8; }
     .section:last-child { border-bottom: none; }
     .sec-label {
@@ -74,35 +69,22 @@
       color: #999; margin-bottom: 1.2rem;
     }
 
-    /* RESEARCH CARDS */
-    .research-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-      gap: 12px;
-    }
+    .research-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; }
     .rcard { background: #f8f8f8; border-radius: 8px; padding: 1rem; }
     .rcard-title { font-size: 13px; font-weight: 600; margin-bottom: 5px; }
     .rcard-desc { font-size: 12px; color: #555; line-height: 1.6; }
     .tags { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 4px; }
-    .tag {
-      font-size: 11px; padding: 2px 8px;
-      border-radius: 99px; background: #eeedfe; color: #3c3489;
-    }
+    .tag { font-size: 11px; padding: 2px 8px; border-radius: 99px; background: #eeedfe; color: #3c3489; }
 
-    /* PUBLICATIONS */
     .pub-item { margin-bottom: 1.1rem; padding-bottom: 1.1rem; border-bottom: 1px solid #f0f0f0; }
     .pub-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
     .pub-title { font-size: 13px; font-weight: 600; line-height: 1.5; }
     .pub-meta { font-size: 12px; color: #666; margin-top: 3px; }
-    .pub-badge {
-      font-size: 11px; padding: 2px 8px;
-      border-radius: 99px; margin-left: 6px;
-      font-weight: 500;
-    }
+    .pub-badge { font-size: 11px; padding: 2px 8px; border-radius: 99px; margin-left: 6px; font-weight: 500; }
     .pub-badge.published { background: #eaf3de; color: #27500a; }
     .pub-badge.prep { background: #faeeda; color: #633806; }
+    .cite-count { font-size: 11px; color: #999; margin-left: 6px; }
 
-    /* EXPERIENCE */
     .exp-item { margin-bottom: 1.2rem; }
     .exp-item:last-child { margin-bottom: 0; }
     .exp-row { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; flex-wrap: wrap; }
@@ -111,21 +93,13 @@
     .exp-org { font-size: 13px; color: #555; margin-top: 2px; }
     .exp-desc { font-size: 12px; color: #666; margin-top: 3px; line-height: 1.6; }
 
-    /* SKILLS */
     .slabel { font-size: 12px; color: #999; margin-bottom: 7px; }
     .skills-row { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 14px; }
     .stag { font-size: 12px; padding: 4px 11px; border-radius: 6px; }
     .stag.strong { background: #e1f5ee; color: #085041; }
     .stag.light { background: #f5f5f5; color: #555; border: 1px solid #e0e0e0; }
 
-    /* FOOTER */
-    .footer {
-      padding: 1.5rem 0;
-      text-align: center;
-      font-size: 12px;
-      color: #aaa;
-      border-top: 1px solid #e8e8e8;
-    }
+    .footer { padding: 1.5rem 0; text-align: center; font-size: 12px; color: #aaa; border-top: 1px solid #e8e8e8; }
 
     @media (max-width: 520px) {
       .hero-inner { flex-direction: column; align-items: center; text-align: center; }
@@ -135,7 +109,6 @@
 </head>
 <body>
 
-<!-- HERO -->
 <div class="hero">
   <div class="container">
     <div class="hero-inner">
@@ -145,13 +118,13 @@
       <div class="bio-block">
         <div class="name">Shweta U. Narkar, Ph.D.</div>
         <div class="affil-row">
-          <span class="affil-badge rpi">Rensselaer Polytechnic Institute</span>
-          <span class="affil-badge rare">RARE Center</span>
+          <a class="affil-badge rpi" href="https://www.rpi.edu" target="_blank">Rensselaer Polytechnic Institute</a>
+          <a class="affil-badge rare" href="https://rare.rpi.edu" target="_blank">RARE Center</a>
         </div>
         <p class="bio-text">I work at the intersection of AI and science — building systems that can represent, reason over, and explain complex scientific knowledge. My research combines knowledge graphs, ontologies, and machine learning to make experimental data in prebiotic chemistry interpretable and reusable.</p>
         <div class="contact-row">
-          <span class="contact-item"><span class="contact-label">RPI</span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5937382b32382a6b192b2930773c3d2c">[email&#160;protected]</a></span>
-          <span class="contact-item"><span class="contact-label">personal</span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6d1e051a08190c435e5b54582d0a000c0401430e0200">[email&#160;protected]</a></span>
+          <span class="contact-item"><span class="contact-label">RPI</span><a href="mailto:narkas2@rpi.edu">narkas2@rpi.edu</a></span>
+          <span class="contact-item"><span class="contact-label">personal</span><a href="mailto:shweta.3695@gmail.com">shweta.3695@gmail.com</a></span>
         </div>
         <div class="link-row">
           <a class="lbtn primary" href="https://scholar.google.com/citations?user=o9xsX8EAAAAJ&hl=en" target="_blank">Google Scholar</a>
@@ -165,7 +138,6 @@
   </div>
 </div>
 
-<!-- RESEARCH -->
 <div class="section">
   <div class="container">
     <div class="sec-label">Research</div>
@@ -189,7 +161,6 @@
   </div>
 </div>
 
-<!-- PUBLICATIONS -->
 <div class="section">
   <div class="container">
     <div class="sec-label">Publications</div>
@@ -198,10 +169,22 @@
       <div class="pub-title">
         Model LineUpper: Supporting Interactive Model Comparison at Multiple Levels for AutoML
         <span class="pub-badge published">IUI 2021</span>
+        <span class="cite-count">cited by 42</span>
       </div>
       <div class="pub-meta">
         <strong>Narkar S.U.</strong>, Zhang Y., Liao Q.V., Wang D., Weisz J.D. &nbsp;·&nbsp; ACM IUI 2021 &nbsp;·&nbsp;
         <a href="https://arxiv.org/abs/2104.04375" target="_blank">arXiv</a>
+      </div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-title">
+        Cluster analysis of presolar silicon carbide grains: Evaluation of their classification and astrophysical implications
+        <span class="pub-badge published">ApJL 2021</span>
+        <span class="cite-count">cited by 26</span>
+      </div>
+      <div class="pub-meta">
+        Boujibar A., Howell S., Zhang S., Hystad G., Prabhu A., Liu N., Stephan T., <strong>Narkar S.U.</strong>, Eleish A., Morrison S.M., Hazen R.M., Nittler L.R. &nbsp;·&nbsp; The Astrophysical Journal Letters 907(2), L39
       </div>
     </div>
 
@@ -231,7 +214,6 @@
   </div>
 </div>
 
-<!-- EDUCATION & EXPERIENCE -->
 <div class="section">
   <div class="container">
     <div class="sec-label">Education &amp; Experience</div>
@@ -242,6 +224,15 @@
         <span class="exp-date">2025 – present</span>
       </div>
       <div class="exp-org">Rensselaer Polytechnic Institute &nbsp;·&nbsp; Advisors: Dr. James A. Hendler &amp; Dr. Karyn L. Rogers</div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-row">
+        <span class="exp-role">ML Research Intern</span>
+        <span class="exp-date">2020</span>
+      </div>
+      <div class="exp-org">IBM Research AI, Yorktown Heights, NY</div>
+      <div class="exp-desc">Developed Model LineUpper, an interactive XAI system for AutoML model comparison. Published at ACM IUI 2021.</div>
     </div>
 
     <div class="exp-item">
@@ -271,7 +262,6 @@
   </div>
 </div>
 
-<!-- SKILLS -->
 <div class="section">
   <div class="container">
     <div class="sec-label">Skills</div>
@@ -285,9 +275,20 @@
     </div>
     <div class="slabel">Additional</div>
     <div class="skills-row">
-      <span class="stag light">Generative AI</span>
       <span class="stag light">LLMs</span>
       <span class="stag light">Python</span>
       <span class="stag light">SHAP</span>
       <span class="stag light">FAIR Data</span>
-      <span class="stag light">Data Provenance</s
+      <span class="stag light">Data Provenance</span>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="container">
+    Shweta U. Narkar &nbsp;·&nbsp; Troy, NY &nbsp;·&nbsp; <a href="mailto:narkas2@rpi.edu">narkas2@rpi.edu</a> &nbsp;·&nbsp; <a href="mailto:shweta.3695@gmail.com">shweta.3695@gmail.com</a>
+  </div>
+</div>
+
+</body>
+</html>
